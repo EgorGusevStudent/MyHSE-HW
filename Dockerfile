@@ -31,11 +31,11 @@ ENV PATH="/usr/local/texlive/2023/bin/x86_64-linux:/usr/local/sbin:/usr/local/bi
 # Установка пакетов enumitem, paracol, fontawesome, silence, background, everypage
 RUN tlmgr install enumitem paracol fontawesome silence background everypage palatino
 
-COPY main.tex /app/
+COPY /CV/main.tex /app/
 
-COPY resources /app/resources
+COPY /CV/resources /app/resources
 
-COPY bubblecv.sty /app/
+COPY /CV/bubblecv.sty /app/
 
 WORKDIR /app
 
