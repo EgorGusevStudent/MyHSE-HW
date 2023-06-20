@@ -14,3 +14,8 @@ jobs:
       run: docker cp my_resume_container:/app/main.pdf .
     - name: Remove Docker Container
       run: docker rm my_resume_container
+    - name: Upload PDF
+      uses: actions/upload-artifact@v2
+      with:
+        name: my-resume
+        path: ./main.pdf
