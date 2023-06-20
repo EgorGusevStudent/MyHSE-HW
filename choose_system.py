@@ -1,6 +1,6 @@
 import hashlib
 
-name = 'Кутенин Данила Михайлович'
+name = 'Гусев Егор Дмитриевич'
 
 systems = [
     'debian:10.1',
