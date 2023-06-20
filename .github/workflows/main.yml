@@ -1,0 +1,16 @@
+name: Build LaTeX document
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Set up Git repository
+      uses: actions/checkout@v2
+    - name: Build Docker Image
+      run: docker build -t my_resume .
+    - name: Run Docker Container
+      run: docker run --name my_resume_container my_resume
+    - name: Copy PDF from Docker Container
+      run: docker cp my_resume_container:/app/main.pdf .
+    - name: Remove Docker Container
+      run: docker rm my_resume_container
